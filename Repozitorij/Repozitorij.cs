@@ -27,15 +27,15 @@ namespace Evaluation_Manager.Repozitorij {
         } //public static Student GetStudent
 
         public static List<Student> GetStudents() {
-            var students = new List<Student>();
-
+            List<Student> students = new List<Student>();
             string sql = "SELECT * FROM Students";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
-            while (reader.Read()) {
+            while (reader.Read()) 
+                {
                 Student student = CreateObject(reader);
                 students.Add(student);
-            }
+                }
 
             reader.Close();
             DB.CloseConnection();
@@ -43,16 +43,18 @@ namespace Evaluation_Manager.Repozitorij {
             return students;
         } //public static List
 
+
         private static Student CreateObject(SqlDataReader reader) {
             int id = int.Parse(reader["Id"].ToString());
             string firstName = reader["FirstName"].ToString();
             string lastName = reader["LastName"].ToString();
-            int grade = 0;
+            int.TryParse(reader["Grade"].ToString(), out int grade);
+            /*int grade = 0;
             try {
                 grade = int.Parse(reader["Grade"].ToString());
 
             } catch (Exception) {
-            }
+            }*/
 
 
             var student = new Student {
