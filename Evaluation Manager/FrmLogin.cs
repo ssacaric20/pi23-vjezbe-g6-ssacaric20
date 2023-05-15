@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evaluation_Manager.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,16 @@ namespace Evaluation_Manager
             }
             else
             {
-                if (txtUsername.Text == username && txtPassword.Text == password)
+                LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
+                if (LoggedTeacher != null && LoggedTeacher.Password == txtPassword.Text)
+                {
+                    FrmStudents frmStudents = new FrmStudents();
+                    Hide();
+                    frmStudents.ShowDialog();
+                    Close();
+                }
+
+                else (txtUsername.Text == username && txtPassword.Text == password)
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
