@@ -36,7 +36,7 @@ namespace Evaluation_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentRepository selectdStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
+            StudentRepository selectedStudent = dgvStudents.CurrentRow.DataBoundItem as Student;
             if (selectedStudent != null)
             {
                 FrmEvaluation frmEvaluation = new FrmEvaluation(selectedStudent);
