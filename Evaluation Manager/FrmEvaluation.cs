@@ -22,7 +22,7 @@ namespace Evaluation_Manager
             Text = student.ToString();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        /*private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -35,11 +35,11 @@ namespace Evaluation_Manager
         private void label4_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
         private void FrmEvaluation_Load(object sender, EventArgs e)
         {
-            var activities = ActivityRep.GetActivities();
+            var activities = ActivityRep.GetActivity();
             cboActivities.DataSource = activities;  
         }
 

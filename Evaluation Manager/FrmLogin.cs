@@ -42,7 +42,7 @@ namespace Evaluation_Manager
                     Close();
                 }
 
-                else (txtUsername.Text == username && txtPassword.Text == password)
+                else if (txtUsername.Text == username && txtPassword.Text == password)
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
