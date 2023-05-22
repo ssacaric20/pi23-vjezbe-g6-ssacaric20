@@ -37,6 +37,11 @@ namespace Evaluation_Manager
 
         }*/
 
+        /*remove DLLS mapu i pod references DBL 
+        solution bar -> desni klik -> add -> new project -> "class library (.Net" (C#) -> rename to "DBLayer" -> promjeni class u DB
+        kod reference -> add references -> project -> solution -> DBLayer
+         */
+
         private void FrmEvaluation_Load(object sender, EventArgs e)
         {
             var activities = ActivityRep.GetActivity();
