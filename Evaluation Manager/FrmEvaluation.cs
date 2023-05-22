@@ -39,7 +39,7 @@ namespace Evaluation_Manager
 
         private void FrmEvaluation_Load(object sender, EventArgs e)
         {
-            var activities = ActivityRepository.GetActivities();
+            var activities = ActivityRep.GetActivities();
             cboActivities.DataSource = activities;  
         }
 
