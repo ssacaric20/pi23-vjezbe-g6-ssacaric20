@@ -70,4 +70,5 @@ namespace Evaluation_Manager.Repositories
 
             return aktivnost;
         }
+    }
 }
